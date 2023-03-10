@@ -30,12 +30,37 @@ class LinkedList
     end
   end
 
-  def print_list
+  def size
     current_node = @head
-    puts current_node.value
-    while (current_node = current_node.next_node)
-      puts current_node.value
+    count = 1
+    while current_node.next_node != nil
+      current_node = current_node.next_node
+      count += 1
     end
+    puts "The total number of nodes is #{count}"
   end
 
+  def head
+    current_node = @head
+    puts "The first node is #{current_node.value}"
+  end
+
+  def tail
+    current_node = @head
+    until current_node.next_node == nil
+      current_node = current_node.next_node
+    end
+    puts "The last node is #{current_node.value}"
+  end
+
+  def print_list_as_array
+    current_node = @head
+    array = []
+    array.push(current_node.value)
+    while (current_node = current_node.next_node)
+      array.push(current_node.value)
+    end
+    p array
+  end
+  
 end

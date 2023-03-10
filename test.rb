@@ -6,5 +6,7 @@ bob.append(3)
 bob.prepend(5)
 bob.append(4)
 bob.prepend(6)
-bob.print_list
-
+bob.print_list_as_array
+bob.size
+bob.head
+bob.tail
