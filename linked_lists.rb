@@ -64,6 +64,14 @@ class LinkedList
     return "The index number's value is #{current_node.value}" 
   end
 
+  def pop
+    current_node = @head
+    until current_node.next_node.next_node == nil
+      current_node = current_node.next_node
+    end
+    current_node.next_node = nil
+  end
+
   def print_list_as_array
     current_node = @head
     array = []

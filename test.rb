@@ -12,3 +12,5 @@ puts bob.head
 puts bob.tail
 puts bob.at(3)
 puts bob.at(8)
+bob.pop
+bob.print_list_as_array
