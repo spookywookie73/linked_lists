@@ -7,6 +7,8 @@ bob.prepend(5)
 bob.append(4)
 bob.prepend(6)
 bob.print_list_as_array
-bob.size
-bob.head
-bob.tail
+puts "The size of the Linked List is #{bob.size}"
+puts bob.head
+puts bob.tail
+puts bob.at(3)
+puts bob.at(8)

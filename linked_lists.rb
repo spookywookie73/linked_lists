@@ -37,12 +37,12 @@ class LinkedList
       current_node = current_node.next_node
       count += 1
     end
-    puts "The total number of nodes is #{count}"
+    return count
   end
 
   def head
     current_node = @head
-    puts "The first node is #{current_node.value}"
+    return "The first node is #{current_node.value}"
   end
 
   def tail
@@ -50,7 +50,18 @@ class LinkedList
     until current_node.next_node == nil
       current_node = current_node.next_node
     end
-    puts "The last node is #{current_node.value}"
+    return "The last node is #{current_node.value}"
+  end
+
+  def at(index)
+    if index < 0 || index > self.size - 1
+      return "That index number is not available"
+    end  
+    current_node = @head
+    index.times do
+      current_node = current_node.next_node
+    end
+    return "The index number's value is #{current_node.value}" 
   end
 
   def print_list_as_array
