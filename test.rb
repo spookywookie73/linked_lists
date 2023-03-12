@@ -14,3 +14,5 @@ puts bob.at(3)
 puts bob.at(8)
 bob.pop
 bob.print_list_as_array
+puts bob.contains?(3)
+puts bob.find(7)

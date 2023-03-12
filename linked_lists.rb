@@ -72,6 +72,28 @@ class LinkedList
     current_node.next_node = nil
   end
 
+  def contains?(value)
+    current_node = @head
+    return true if value == current_node.value
+    while current_node.next_node != nil
+      current_node = current_node.next_node
+      return true if value == current_node.value
+    end
+    return false
+  end
+
+  def find(value)
+    current_node = @head
+    index = 0
+    return "The index number is #{index}" if value == current_node.value
+    while current_node.next_node != nil
+      current_node = current_node.next_node
+      index += 1
+      return "The index number is #{index}" if value == current_node.value
+    end
+    return "nil"
+  end
+
   def print_list_as_array
     current_node = @head
     array = []
