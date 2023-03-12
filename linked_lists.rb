@@ -94,14 +94,38 @@ class LinkedList
     return "nil"
   end
 
-  def print_list_as_array
+  def to_s
     current_node = @head
-    array = []
-    array.push(current_node.value)
+    print "( #{current_node.value} ) -> "
     while (current_node = current_node.next_node)
-      array.push(current_node.value)
+      print "( #{current_node.value} ) -> "
     end
-    p array
+    if current_node == nil
+    p nil
+    end
   end
+
+  def insert_at(value, index)
+    if index < 0 || index > self.size - 1
+      return "That index number is not available"
+    end  
+    current_node = @head
+    new_node = Node.new(value)
+    index.times do
+      current_node = current_node.next_node
+    end
+    new_node.next_node = current_node.next_node
+    current_node.next_node = new_node
+  end
+
+  #def print_list_as_array
+  #  current_node = @head
+  #  array = []
+  #  array.push(current_node.value)
+  #  while (current_node = current_node.next_node)
+  #    array.push(current_node.value)
+  #  end
+  #  p array
+  #end
   
 end
