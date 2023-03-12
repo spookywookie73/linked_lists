@@ -18,3 +18,5 @@ puts bob.contains?(3)
 puts bob.find(3)
 bob.insert_at(4, 1)
 bob.to_s
+bob.remove_at(2)
+bob.to_s

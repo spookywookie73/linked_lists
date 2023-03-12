@@ -118,6 +118,17 @@ class LinkedList
     current_node.next_node = new_node
   end
 
+  def remove_at(index)
+    if index < 0 || index > self.size - 1
+      return "That index number is not available"
+    end
+    current_node = @head
+    index - 1.times do
+      current_node = current_node.next_node
+    end
+    current_node.next_node = current_node.next_node.next_node
+  end
+
   #def print_list_as_array
   #  current_node = @head
   #  array = []
